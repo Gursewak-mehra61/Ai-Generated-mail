@@ -183,12 +183,12 @@ function App() {
       {/* Header */}
       <header className="relative bg-white/80 backdrop-blur-xl border-b border-slate-200/60 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-between h-16 sm:h-20">
+            <div className="flex items-center space-x-3 sm:space-x-4">
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/30">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/30">
                   {/* Envelope + Sparkle SVG, theme colors */}
-                  <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24">
                     <rect x="3" y="7" width="18" height="10" rx="3" fill="#fff" fillOpacity="0.85" />
                     <path d="M3 7l9 6 9-6" stroke="#9333ea" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                     <rect x="3" y="7" width="18" height="10" rx="3" stroke="#7c3aed" strokeWidth="1.5" />
@@ -198,20 +198,20 @@ function App() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl blur opacity-20" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+                <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
                   AI Email Generator
                 </h1>
-                <p className="text-slate-600 text-sm">AI-Powered Email Automation</p>
+                <p className="text-slate-600 text-xs sm:text-sm">AI-Powered Email Automation</p>
               </div>
             </div>
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-3 sm:space-x-6">
               <div className="hidden sm:flex items-center space-x-3 text-slate-600">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-ping" />
                 <span className="text-sm font-medium">System Online</span>
               </div>
-              <div className="flex items-center space-x-2 bg-purple-50 rounded-full px-4 py-2 border border-purple-200">
+              <div className="flex items-center space-x-2 bg-purple-50 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-purple-200">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-sm text-slate-700 font-medium">Ready</span>
+                <span className="text-xs sm:text-sm text-slate-700 font-medium">Ready</span>
               </div>
             </div>
           </div>
@@ -219,17 +219,17 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <main className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Left Panel - Input Form */}
           <div className="lg:col-span-1">
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-slate-200/60 overflow-hidden transform hover:scale-[1.01] transition-all duration-300">
-              <div className="px-8 py-6 border-b border-slate-200/60 bg-gradient-to-r from-purple-50 to-indigo-50">
-                <h2 className="text-xl font-bold text-slate-900 mb-2">Email Configuration</h2>
+              <div className="px-6 sm:px-8 py-4 sm:py-6 border-b border-slate-200/60 bg-gradient-to-r from-purple-50 to-indigo-50">
+                <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Email Configuration</h2>
                 <p className="text-slate-600 text-sm">Configure your AI-powered email settings</p>
               </div>
               
-              <div className="p-8 space-y-8">
+              <div className="p-6 sm:p-8 space-y-6 sm:space-y-8">
                 {/* Recipients Input */}
                 <div className="space-y-3">
                   <label htmlFor="recipients" className="block text-sm font-semibold text-slate-700">
@@ -310,10 +310,10 @@ function App() {
           <div className="lg:col-span-2">
             {generatedEmail ? (
               <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-slate-200/60 overflow-hidden transform hover:scale-[1.01] transition-all duration-300">
-                <div className="px-8 py-6 border-b border-slate-200/60 bg-gradient-to-r from-purple-50 to-indigo-50">
+                <div className="px-6 sm:px-8 py-4 sm:py-6 border-b border-slate-200/60 bg-gradient-to-r from-purple-50 to-indigo-50">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h2 className="text-xl font-bold text-slate-900 mb-2">Generated Email</h2>
+                      <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Generated Email</h2>
                       <p className="text-slate-600 text-sm">Review and edit your AI-generated email</p>
                     </div>
                     <div className="flex items-center space-x-3">
@@ -323,7 +323,7 @@ function App() {
                   </div>
                 </div>
                 
-                <div className="p-8">
+                <div className="p-6 sm:p-8">
                   <div className="space-y-6">
                     <div className="space-y-3">
                       <label htmlFor="editableEmail" className="block text-sm font-semibold text-slate-700">
@@ -342,8 +342,8 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between pt-6">
-                      <div className="flex items-center space-x-6">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6">
+                      <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                         <div className="flex items-center space-x-2 text-sm text-slate-600">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -361,7 +361,7 @@ function App() {
                       <button
                         onClick={sendEmail}
                         disabled={!recipients.trim() || !editableEmail.trim()}
-                        className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 hover:from-green-500 hover:via-emerald-500 hover:to-teal-500 disabled:from-slate-400 disabled:via-slate-400 disabled:to-slate-500 text-white font-bold py-3 px-8 rounded-2xl transition-all duration-300 transform hover:scale-[1.05] hover:shadow-xl hover:shadow-green-500/30 disabled:transform-none disabled:cursor-not-allowed flex items-center space-x-3 relative overflow-hidden group"
+                        className="w-full sm:w-auto bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 hover:from-green-500 hover:via-emerald-500 hover:to-teal-500 disabled:from-slate-400 disabled:via-slate-400 disabled:to-slate-500 text-white font-bold py-3 px-8 rounded-2xl transition-all duration-300 transform hover:scale-[1.05] hover:shadow-xl hover:shadow-green-500/30 disabled:transform-none disabled:cursor-not-allowed flex items-center justify-center space-x-3 relative overflow-hidden group"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -375,21 +375,21 @@ function App() {
               </div>
             ) : (
               <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-slate-200/60 overflow-hidden">
-                <div className="px-8 py-6 border-b border-slate-200/60 bg-gradient-to-r from-purple-50 to-indigo-50">
-                  <h2 className="text-xl font-bold text-slate-900 mb-2">Generated Email</h2>
+                <div className="px-6 sm:px-8 py-4 sm:py-6 border-b border-slate-200/60 bg-gradient-to-r from-purple-50 to-indigo-50">
+                  <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">Generated Email</h2>
                   <p className="text-slate-600 text-sm">Your AI-generated email will appear here</p>
                 </div>
                 
-                <div className="p-16 text-center">
+                <div className="p-12 sm:p-16 text-center">
                   <div className="relative">
-                    <div className="w-24 h-24 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6 border border-purple-200">
-                      <svg className="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6 border border-purple-200">
+                      <svg className="w-10 h-10 sm:w-12 sm:h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <div className="absolute inset-0 w-24 h-24 bg-gradient-to-r from-purple-200 to-indigo-200 rounded-full blur-xl animate-pulse opacity-50" />
+                    <div className="absolute inset-0 w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-r from-purple-200 to-indigo-200 rounded-full blur-xl animate-pulse opacity-50" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">No email generated yet</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">No email generated yet</h3>
                   <p className="text-slate-600">Enter a prompt and click "Generate AI Email" to get started</p>
                 </div>
               </div>
