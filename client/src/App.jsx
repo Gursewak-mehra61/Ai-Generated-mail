@@ -4,6 +4,7 @@ import axios from "axios";
 function App() {
   const [recipients, setRecipients] = useState("");
   const [prompt, setPrompt] = useState("");
+  const [generatedText, setGeneratedText] = useState('');
   const [generatedEmail, setGeneratedEmail] = useState("");
   const [editableEmail, setEditableEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -126,14 +127,14 @@ function App() {
   const generateEmail = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/generate", {
-        prompt,
-      });
+    const res = await axios.post("/api/generate", { prompt });
+      setGeneratedText(res.data.generatedText);
       setGeneratedEmail(res.data.generatedText);
       setEditableEmail(res.data.generatedText);
       setSentStatus("");
+      
     } catch (err) {
-      console.error(err);
+     console.error("Error:", err.response?.data || err.message);
       showNotification("error", "Error generating email. Please try again.");
     } finally {
       setLoading(false);
@@ -141,11 +142,9 @@ function App() {
   };
 
   const sendEmail = async () => {
+    console.log("Sending this content:", generatedText);
     try {
-      const res = await axios.post("http://localhost:5000/send", {
-        recipients,
-        content: editableEmail,
-      });
+     const res = await axios.post("/api/send", { recipients, content: generatedText, });
       showNotification("success", "Email sent successfully!");
     } catch (err) {
       console.error(err);
