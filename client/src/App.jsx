@@ -127,7 +127,7 @@ function App() {
   const generateEmail = async () => {
     setLoading(true);
     try {
-    const res = await axios.post("/api/generate", { prompt });
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/generate`, { prompt });
       setGeneratedText(res.data.generatedText);
       setGeneratedEmail(res.data.generatedText);
       setEditableEmail(res.data.generatedText);
@@ -144,7 +144,7 @@ function App() {
   const sendEmail = async () => {
     console.log("Sending this content:", generatedText);
     try {
-     const res = await axios.post("/api/send", { recipients, content: generatedText, });
+     const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/send`, { recipients, content: generatedText, });
       showNotification("success", "Email sent successfully!");
     } catch (err) {
       console.error(err);
